@@ -66,13 +66,13 @@ class SortContext:
     def set_sort_strategy(self, strategy: SortStrategy):
         self._sort_strategy = strategy
 
-    def sort(self, data):
+    def perform_sort(self, data):
         return self._sort_strategy.sort(data)
     
 # Example usage
 data = [64, 34, 25, 12, 22, 11, 90]
 context = SortContext(BubbleSort())
-print("Bubble Sort:", context.sort(data.copy()))
+print("Bubble Sort:", context.perform_sort(data.copy()))
 
 context.set_sort_strategy(MergeSort())
-print("Merge Sort:", context.sort(data.copy()))
+print("Merge Sort:", context.perform_sort(data.copy()))
